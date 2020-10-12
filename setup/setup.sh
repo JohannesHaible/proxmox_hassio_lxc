@@ -92,8 +92,8 @@ echo "cd ${HA_PATH}" >> /root/.bashrc
 
 # Customize container
 msg "Customizing container..."
-rm /etc/motd # Remove message of the day after login
-rm /etc/update-motd.d/10-uname # Remove kernel information after login
+#Jo rm /etc/motd # Remove message of the day after login
+#Jo rm /etc/update-motd.d/10-uname # Remove kernel information after login
 touch ~/.hushlogin # Remove 'Last login: ' and mail notification after login
 
 # Cleanup container
