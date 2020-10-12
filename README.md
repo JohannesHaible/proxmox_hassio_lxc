@@ -16,10 +16,10 @@ After running the above command, you should modify the container's `Resources` (
 
 ## Update device hooks
 
-To update the list of devices that are shared with the LXC ID of `100`, run the following in a SSH connection or the Proxmox web shell.
+To update the list of devices that are shared with the LXC ID of `181`, run the following in a SSH connection or the Proxmox web shell.
 
 ```
-bash -c "$(wget -qLO - https://github.com/JohannesHaible/proxmox_hassio_lxc/raw/master/set_autodev_hook.sh)" -s 100
+bash -c "$(wget -qLO - https://github.com/JohannesHaible/proxmox_hassio_lxc/raw/master/set_autodev_hook.sh)" -s 181
 ```
 
 ***Note:*** _The changes will apply on the next start of LXC._
