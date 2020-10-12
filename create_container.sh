@@ -54,7 +54,7 @@ TEMP_DIR=$(mktemp -d)
 pushd $TEMP_DIR >/dev/null
 
 # Download setup script
-REPO="https://github.com/whiskerz007/proxmox_hassio_lxc"
+REPO="https://github.com/JohannesHaible/proxmox_hassio_lxc"
 wget -qO - ${REPO}/tarball/master | tar -xz --strip-components=1
 
 # Select storage location
@@ -92,8 +92,10 @@ info "Container ID is $CTID."
 msg "Updating LXC template list..."
 pveam update >/dev/null
 msg "Downloading LXC template..."
-OSTYPE=debian
-OSVERSION=${OSTYPE}-10
+OSTYPE=ubuntu
+OSVERSION=${OSTYPE}-20.04
+# OSTYPE=debian
+# OSVERSION=${OSTYPE}-10
 mapfile -t TEMPLATES < <(pveam available -section system | sed -n "s/.*\($OSVERSION.*\)/\1/p" | sort -t - -k 2 -V)
 TEMPLATE="${TEMPLATES[-1]}"
 pveam download local $TEMPLATE >/dev/null ||
